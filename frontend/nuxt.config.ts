@@ -59,13 +59,18 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
-    }
+    },
+    baseURL: '/',
+    buildAssetsDir: '/_nuxt/'
   },
   vite: {
     plugins: [tsconfigPaths()]
   },
   nitro: {
-    preset: 'node-server'
+    preset: 'node-server',
+    prerender: {
+      routes: ['/']
+    }
   },
   ssr: true
 })
