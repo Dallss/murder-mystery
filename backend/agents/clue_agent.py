@@ -15,9 +15,9 @@ Uses ModelRouter to select appropriate models for different tasks:
 # - Inline comments explain prompt structure and model routing choices.
 """
 
-from .base_agent import BaseAgent
-from .model_router import ModelRouter
-from .models.psychological_profile import PsychologicalProfile, create_default_profile
+from backend.agents.base_agent import BaseAgent
+from backend.agents.model_router import ModelRouter
+from backend.agents.models.psychological_profile import PsychologicalProfile, create_default_profile
 from pydantic import BaseModel, Field, ConfigDict
 from typing import Dict, Any, Optional, List, Union, Annotated
 import requests

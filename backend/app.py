@@ -19,6 +19,7 @@ from backend.routes.user_progress_routes import user_progress_bp
 # from backend.routes.users import users_bp
 # from backend.routes.mysteries import mysteries_bp
 # from backend.routes.board import board_bp
+
 def create_app(config_overrides=None):
     """Create and configure the Flask application."""
     app = Flask(__name__)
