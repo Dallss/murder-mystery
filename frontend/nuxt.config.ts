@@ -33,8 +33,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'http://localhost:3000/api',
-      apiUrl: process.env.VITE_API_URL || 'http://localhost:5000',
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'https://murder-mystery-backend.onrender.com/api',
+      apiUrl: process.env.VITE_API_URL || 'https://murder-mystery-backend.onrender.com',
       supabaseUrl: process.env.SUPABASE_URL,
       supabaseKey: process.env.SUPABASE_KEY,
       supabaseRedirectOptions: {
@@ -67,7 +67,11 @@ export default defineNuxtConfig({
     plugins: [tsconfigPaths()]
   },
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
   },
   experimental: {
     payloadExtraction: false
