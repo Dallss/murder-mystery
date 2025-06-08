@@ -10,6 +10,11 @@
   VITE_API_URL = "https://murder-mystery-backend.onrender.com"
 
 [[redirects]]
+  from = "/_nuxt/*"
+  to = "/_nuxt/:splat"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
