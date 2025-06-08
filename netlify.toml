@@ -7,6 +7,7 @@
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
   NUXT_TELEMETRY_DISABLED = "1"
+  VITE_API_URL = "https://murder-mystery-backend.onrender.com"
 
 [[redirects]]
   from = "/*"
@@ -21,6 +22,7 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/_nuxt/*"

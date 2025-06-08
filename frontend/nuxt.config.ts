@@ -91,6 +91,5 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false
   },
-  ssr: false,
-  target: 'static'
+  ssr: false
 })
