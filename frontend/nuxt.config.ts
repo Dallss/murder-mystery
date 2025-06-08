@@ -61,15 +61,26 @@ export default defineNuxtConfig({
       ]
     },
     baseURL: '/',
-    buildAssetsDir: '/_nuxt/'
+    buildAssetsDir: '/_nuxt/',
+    cdnURL: process.env.NUXT_APP_CDN_URL || ''
   },
   vite: {
-    plugins: [tsconfigPaths()]
+    plugins: [tsconfigPaths()],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: undefined
+        }
+      }
+    }
   },
   nitro: {
     preset: 'node-server',
     prerender: {
       routes: ['/']
+    },
+    routeRules: {
+      '/**': { cors: true }
     }
   },
   ssr: true
