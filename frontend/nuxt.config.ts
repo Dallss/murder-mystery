@@ -16,7 +16,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-  
   ],
   typescript: {
     strict: true,
@@ -29,7 +28,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  
   alias: {
     '@': resolve(rootDir),
   },
@@ -65,5 +63,9 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [tsconfigPaths()]
-  }
+  },
+  nitro: {
+    preset: 'node-server'
+  },
+  ssr: true
 })
