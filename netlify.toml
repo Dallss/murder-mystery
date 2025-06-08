@@ -9,18 +9,10 @@
   NUXT_TELEMETRY_DISABLED = "1"
 
 [[redirects]]
-  from = "/_nuxt/*"
-  to = "/_nuxt/:splat"
-  status = 200
-  force = true
-  conditions = {Path = ["/_nuxt/*"]}
-
-[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
   force = true
-  conditions = {Path = ["/*"]}
 
 [[headers]]
   for = "/*"

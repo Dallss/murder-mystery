@@ -78,22 +78,16 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
-    preset: 'node-server',
+    preset: 'static',
     prerender: {
       routes: ['/']
     },
     routeRules: {
       '/**': { cors: true }
-    },
-    publicAssets: [
-      {
-        baseURL: '/_nuxt/',
-        dir: 'public/_nuxt'
-      }
-    ]
+    }
   },
   experimental: {
     payloadExtraction: false
   },
-  ssr: true
+  ssr: false
 })
