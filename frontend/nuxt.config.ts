@@ -72,6 +72,9 @@ export default defineNuxtConfig({
           manualChunks: undefined
         }
       }
+    },
+    optimizeDeps: {
+      include: ['vue', 'vue-router', 'pinia']
     }
   },
   nitro: {
@@ -81,7 +84,13 @@ export default defineNuxtConfig({
     },
     routeRules: {
       '/**': { cors: true }
-    }
+    },
+    publicAssets: [
+      {
+        baseURL: '/_nuxt/',
+        dir: 'public/_nuxt'
+      }
+    ]
   },
   ssr: true
 })
