@@ -80,7 +80,9 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     prerender: {
-      routes: ['/']
+      routes: ['/'],
+      crawlLinks: true,
+      failOnError: false
     },
     routeRules: {
       '/**': { cors: true }
@@ -89,5 +91,6 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false
   },
-  ssr: false
+  ssr: false,
+  target: 'static'
 })
