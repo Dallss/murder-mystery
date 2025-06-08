@@ -62,7 +62,8 @@ export default defineNuxtConfig({
     },
     baseURL: '/',
     buildAssetsDir: '/_nuxt/',
-    cdnURL: process.env.NUXT_APP_CDN_URL || ''
+    cdnURL: process.env.NUXT_APP_CDN_URL || '',
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
   vite: {
     plugins: [tsconfigPaths()],

@@ -22,13 +22,13 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
   for = "/_nuxt/*"
   [headers.values]
-    Content-Type = "application/javascript"
     Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "application/javascript"
 
 [[headers]]
   for = "/*.js"
