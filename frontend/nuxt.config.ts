@@ -61,33 +61,13 @@ export default defineNuxtConfig({
       ]
     },
     baseURL: '/',
-    buildAssetsDir: '/_nuxt/',
-    cdnURL: process.env.NUXT_APP_CDN_URL || '',
-    pageTransition: { name: 'page', mode: 'out-in' }
+    buildAssetsDir: '/_nuxt/'
   },
   vite: {
-    plugins: [tsconfigPaths()],
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: undefined
-        }
-      }
-    },
-    optimizeDeps: {
-      include: ['vue', 'vue-router', 'pinia']
-    }
+    plugins: [tsconfigPaths()]
   },
   nitro: {
-    preset: 'static',
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true,
-      failOnError: false
-    },
-    routeRules: {
-      '/**': { cors: true }
-    }
+    preset: 'static'
   },
   experimental: {
     payloadExtraction: false
